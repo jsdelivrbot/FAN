@@ -30,17 +30,16 @@ module.exports = (app) => {
           }).reduce(function(totalNum, number){
               return Number(totalNum) + Number(number);
           }, 0);
-          console.log(total);
           if (total < match){
             match = total;
             matchName = rows[i].name;
           }
         }
-        console.log(matchName);
-      });
-      connection.query('INSERT INTO friends SET ?', req.body, (err) => {
-          if (err) throw err;
-          res.send("Succesfully Added.");
+        req.body.match = matchName;
+        connection.query('INSERT INTO friends SET ?', req.body, (err) => {
+            if (err) throw err;
+            res.send(req.body);
+        });
       });
     });
 }

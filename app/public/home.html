@@ -3,421 +3,18 @@
 
 <head>
     <title>Friend Finder</title>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/survey_style.css">
-    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono|Josefin+Sans|Bungee|Bungee+Hairline|Bungee+Outline" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/sass/survey_style.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass+Mono|Josefin+Sans|Bungee|Bungee+Hairline|Bungee+Outline">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="/javascript/friends2.js"></script> -->
+    <script type="text/javascript" src="/javascript/friends3.js"></script>
 </head>
-<style>
-  body {
-    background-color: #babec4;
-    color: #444;
-    opacity: .7;
-    overflow:hidden;
-  }
-  a:hover, a:active, a:focus, a:visited {
-  text-decoration: none;
-  }
-  #button-holder {
-    overflow: hidden;
-    height: 600px;
-    /*min-width: 600px;*/
-  }
-  #friend-finder{
-    background: transparent;
-    border-style: none;
-    margin-left: 278px;
-    height: 50px;
-    color: white;
-  }
-  #find-friends {
-    position: absolute;
-    top: 0;
-    margin-top: 7px;
-    margin-left: 695px;
-    color:#444;
-  }
-  .all-box {
-    width: 45px;
-    position: absolute;
-    height: 400px;
-    top: 0;
-    opacity: 0;
-    margin-top: 125px;
-    z-index: 5;
-    margin-left: 39%;
-  }
-  .all-exit {
-    width: 700px;
-    position: absolute;
-    height: 400px;
-    top: 0;
-    opacity: 0;
-    margin-top: 125px;
-    left: 0;
-    z-index: 6;
-    margin-left: 43%;
-  }
-  #q2-hover-box {
-    /*width: 45px;
-    position: absolute;
-    height: 400px;
-    top: 0;
-    opacity: 0;
-    margin-top: 125px;
-    z-index: 5;
-    margin-left: 39%;*/
-  }
-  #q2-hover-exit {
-    /*width: 700px;
-    position: absolute;
-    height: 400px;
-    top: 0;
-    opacity: 0;
-    margin-top: 125px;
-    left: 0;
-    z-index: 6;
-    margin-left: 43%;*/
-  }
-  #q3-hover-box {
-    width: 40px;
-    height: 325px;
-    margin-top: 175px;
-    margin-left: 35.35%;
-  }
-  #q3-hover-exit {
-    width: 800px;
-    z-index: 4;
-    margin-left: 38.5%;
-  }
-  #q4-hover-box {
-    width: 35px;
-    height: 260px;
-    margin-top: 200px;
-    margin-left: 32.3%;
-  }
-  #q4-hover-exit {
-    width: 800px;
-    z-index: 4;
-    margin-left: 38.5%;
-  }
-  #q5-hover-box {
-    width: 30px;
-    height: 185px;
-    margin-top: 235px;
-    margin-left: 29.7%;
-  }
-  #q5-hover-exit {
-    width: 800px;
-    z-index: 4;
-    margin-left: 38.5%;
-  }
-  #q0-hover-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 7;
-    width: 40px;
-    height: 450px;
-    margin-top: 100px;
-    margin-left: 43%;
-  }
-  #q0-hover-exit {
-    width: 60px;
-    height: 460px;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    margin-top: 90px;
-    left: 0;
-    z-index: 6;
-    /*background-color: black;*/
-    margin-left: 42%;
-  }
-  #input1 {
-    width: 525px;
-    height: 22px;
-    background-color: transparent;
-    border: 1px solid white;
-  }
-  #left-light {
-    /*width: 30px;*/
-    margin-left: 43.8%;
-    margin-top: 110px;
-    background-color: transparent;
-    height: 425px;
-    opacity: 0;
-    -webkit-box-shadow: 15px 0px 40px 10px #777;
-    box-shadow: 15px 0px 40px 10px #777;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    transition: all .1s ease;
-  }
-  #right-light {
-    margin-left: 58.9%;
-    margin-top: 110px;
-    background-color: transparent;
-    height: 425px;
-    opacity: 0;
-    -webkit-box-shadow: -15px 0px 40px 10px #777;
-    box-shadow: -15px 0px 40px 10px #777;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    transition: all .1s ease;
-  }
-  #match1 {
-    opacity: 1;
-    color: white;
-    width: 100%;
-    overflow: hidden;
-  }
-  #post {
-    position: relative;
-    margin-top: 430px;
-    font-family: 'Bungee Hairline', cursive;
-    font-size: 24px;
-    margin-left: 20%;
-    color: #666;
-  }
-  .questions {
-    width: 2px;
-    position: absolute;
-    height: 400px;
-    top: 0;
-    opacity: .8;
-    margin-top: 125px;
-    background-color: white;
-    z-index: 1;
-    transition: all .1s ease;
-  }
-  .questions:hover{
-    background-color: white;
-    opacity: 1;
-    width: 10px;
 
-  }
-  #q1 {
-    width: 2px;
-    height: 700px;
-    margin-top: 40px;
-  }
-  #q2 {
-    margin-left: 40%;
-    background-color: #777;
-  }
-  #q3 {
-    margin-left: 37%;
-    margin-top: 170px;
-    height: 325px;
-    background-color: #555;
-  }
-  #q4 {
-    margin-left: 34%;
-    margin-top: 205px;
-    height: 250px;
-    background-color: #444;
-  }
-  #q5 {
-    margin-left: 31%;
-    margin-top: 240px;
-    height: 175px;background-color: #222;
-  }
-  #q6 {
-    margin-left: 28%;
-    margin-top: 275px;
-    height: 100px;
-    background-color: #111;
-  }
-  .ripple {
-    opacity: 0;
-    width: 100px;
-    background-color: transparent;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 400px;
-    z-index: 1;
-    border: 1px solid white;
-  }
-  #robot-queen{
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin-left: 33%;
-    margin-top: 50px;
-    width: 500px;
-    z-index: -1;
-  }
-  .ripple {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
-  position: absolute;
-  opacity: 1;
-}
-.rippleEffect {
-    animation: rippleDrop 1.5s;
-}
-
-@keyframes rippleDrop {
-  100% {
-    transform: scale(5);
-    opacity: 0;
-  }
-}
-video {
-  -webkit-font-smoothing: antialiased;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-  	background-size: cover;
-  	transition: 1s opacity;
-}
-
-
-
-#wrapper {
-  margin-left: 400px;
-  overflow: hidden;
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    font-family: 'Bungee Hairline', cursive;
-}
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-    z-index: 3;
-    position: fixed;
-    top: 0;
-    margin-top: 90px;
-    width: 0;
-    height: 100%;
-    margin-left: 210px;
-    overflow-y: auto;
-    background-color: rgba(155, 155, 155, 0);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-}
-
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
-/* Sidebar Styles */
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    min-width: 600px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #999999;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-    width: 525px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-      overflow: hidden;
-        width: 600px;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-}
-
-</style>
 <body>
+  <a id="display-match" href="/survey">FriendFINDER</a>
+  <div id='vidfill'></div>
 
   <video id="vid" playsinline autoplay muted loop>
       <source id="sour" src="https://cdn.rawgit.com/rasianart/FriendFinder/7e3c275d/app/public/falling.mp4" type="video/mp4">
@@ -433,172 +30,77 @@ video {
                   </a>
               </li>
               <li>
-                  <div id="match1">                  <!-- <input id='input1'> -->
-                  </div>
+                  <div id="match1"></div>
                   <div id="button-holder">
-                    <button id="button1">Caress</button>
-                    <button id="button2">Ravage</button>
-                    <button id="button3">Caress</button>
-                    <button id="button4">Ravage</button>
-                    <button id="button5">Caress</button>
+                    <form class="one-button-contain">
+                      <button id="button1" class="all-buttons" data-num="1" type="submit">
+                        <div id="letter1" class="letter-image" type="submit">1</div>
+                      </button>
+                    </form>
+                    <form class="one-button-contain">
+                      <button id="button2" class="all-buttons" data-num="2" type="submit">
+                        <div id="letter2" class="letter-image" type="submit">2</div>
+                      </button>
+                    </form>
+                    <form class="one-button-contain">
+                      <button id="button3" class="all-buttons" data-num="3" type="submit">
+                        <div id="letter3" class="letter-image">3</div>
+                      </button>
+                    </form>
+                    <form class="one-button-contain">
+                      <button id="button4" class="all-buttons" data-num="4" type="submit">
+                        <div id="letter4" class="letter-image">4</div>
+                      </button>
+                    </form>
+                    <form class="one-button-contain">
+                      <button id="button5" class="all-buttons" data-num="5" type="submit">
+                        <div id="letter5" class="letter-image">5</div>
+                      </button>
+                    </form>
                   </div>
               </li>
           </ul>
       </div>
   </div>
+  <form id="post">
+    <input id="name-input" placeholder="Enter Name" autocomplete="off">
+  </form>
+  <form id="photo">
+    <input id="photo-input" placeholder="Enter Link to Photo" autocomplete="off">
+  </form>
   <div id="question-holder">
-    <div id="q1" class="questions"></div>
-    <div id="q0-hover-box"></div>
-    <div id="q0-hover-exit"></div>
-    <div id="left-light"></div>
-    <div id="right-light"></div>
-    <div id="q2-hover-box" class="all-box"></div>
-    <div id="q2-hover-exit" class="all-exit"></div>
-    <div id="q2" class="questions"></div>
-    <div id="q3-hover-box" class="all-box"></div>
-    <div id="q3-hover-exit" class="all-exit"></div>
-    <div id="q3" class="questions"></div>
-    <div id="q4-hover-box" class="all-box"></div>
-    <div id="q4-hover-exit" class="all-exit"></div>
-    <div id="q4" class="questions"></div>
-    <div id="q5-hover-box" class="all-box"></div>
-    <div id="q5-hover-exit" class="all-exit"></div>
-    <div id="q5" class="questions"></div>
-    <!-- <div id="q0-hover-box" class="all-box"></div>
-    <div id="q0-hover-exit" class="all-exit"></div>
-    <div id="q0" class="questions"></div> -->
-  </div>
-  <div id="post">POST
-    <button id="friend-finder" type="submit">FriendFINDER<div id="button-hover"></div></button>
-    <div>
-      <a id=find-friends href="/style.html">FINDFriends</a>
+    <div id="q1-contain">
+      <div id="q1"></div>
     </div>
+    <div id="q0-hover-box" class="all-box-left"></div>
+    <div id="q0" class="questions"></div>
+    <div id="left-light"></div>
+    <!-- <div id="right-light"></div> -->
+    <div id="q2-hover-box" class="four-left all-box-left"></div>
+    <div id="q2" class="questions"></div>
+    <div id="q3-hover-box" class="four-left all-box-left"></div>
+    <div id="q3" class="questions"></div>
+    <div id="q4-hover-box" class="four-left all-box-left"></div>
+    <div id="q4" class="questions"></div>
+    <div id="q5-hover-box" class="four-left all-box-left"></div>
+    <div id="q5" class="questions"></div>
   </div>
-
-
-<script>
-$("#wrapper").toggleClass("toggled");
-  let isToggled = false;
-  let id = 'q';
-  let type = (qId, curId, question) => {
-    if(!isToggled) {
-      $('#match1').html(question);
-      $("#wrapper").toggleClass("toggled");
-      isToggled = true;
-      id = qId;
-    } else {
-      if(id === curId) {
-        $("#wrapper").toggleClass("toggled");
-        isToggled = false;
-      } else {
-        $('#match1').html(question);
-        isToggled = true;
-        id = qId;
-      }
-    }
-  }
-
-  $("#q2-hover-box").on('mouseenter', function() {
-    $('#q2').css({'width': '15px', 'color': 'white'});
-  $('#q2').css({'width': '15px', 'color': 'white'});
-  });
-  $("#q3-hover-box").on('mouseenter', function() {
-      $('#q3').css({'width': '13px', 'color': 'white'});
-  });
-  $("#q4-hover-box").on('mouseenter', function() {
-      $('#q4').css({'width': '11px', 'color': 'white'});
-  });
-  $("#q5-hover-box").on('mouseenter', function() {
-      $('#q5').css({'width': '9px', 'color': 'white'});
-  });
-  $("#q0-hover-box").on('mouseenter', function() {
-      $('#left-light').css('opacity', '1');
-  });
-  $("#q0-hover-box").on('mouseleave', function() {
-      $('#left-light').css('opacity', '0');
-  });
-
-  $(".all-exit, .all-box").on('mouseleave', function() {
-      $('.questions').css({'width': '2px', 'opacity': '1'});
-  });
-  //1st left bar
-  $(document).on('click', 'div#q2-hover-box', function() {
-    let current2 = $(this).attr('id');
-    console.log(current2);
-    let question2 = 'Lovely to touch, this is always on your mind.';
-    console.log(question2);
-    type('q2-hover-box', current2, question2);
-  });
-  //2nd left bar
-  $(document).on('click', 'div#q3-hover-box', function() {
-      let current3 = $(this).attr('id');
-      let question3 = 'The times of darkness are really tough.';
-      type('q3-hover-box', current3, question3);
-      $('#q3').css({'width': '13px', 'color': 'white'});
-  });
-//3rd left bar
-  $(document).on('click', 'div#q4-hover-box', function() {
-      let current4 = $(this).attr('id');
-      let question4 = 'The high of it is always reasonable in moderation';
-      type('q4-hover-box', current4, question4);
-      $('#q4').css({'width': '11px', 'color': 'white'});
-  });
-  //4rd left bar
-    $(document).on('click', 'div#q5-hover-box', function() {
-        let current5 = $(this).attr('id');
-        let question5 = 'The high of it is always reasonable in moderation';
-        type('q5-hover-box', current5, question5);
-        $('#q5').css({'width': '9px', 'color': 'white'});
-    });
-    //5rd left bar
-      $(document).on('click', 'div#q0-hover-box', function() {
-          let current6 = $(this).attr('id');
-          let question6 = 'The high of it is always reasonable in moderation';
-          type('q0-hover-box', current6, question6);
-          $('#left-light').css('opacity', '1');
-      });
-
-
-  $('#friend-finder').on('mouseleave', function () {
-    $('#button-hover').css('opacity', 0);
-  });
-  $('#friend-finder').on('mouseenter', function (e) {
-    $('#button-hover').css('opacity', 1);
-
-  // $(".ripple").remove();
-  //
-  // var posX = $(this).offset().left,
-  //     posY = $(this).offset().top,
-  //     buttonWidth = $(this).width(),
-  //     buttonHeight =  $(this).height();
-  //
-  // $(this).prepend("<span class='ripple'></span>");
-  //
-  // if(buttonWidth >= buttonHeight) {
-  //   buttonHeight = buttonWidth;
-  // } else {
-  //   buttonWidth = buttonHeight;
-  // }
-  //
-  // $(".ripple").css({
-  //   width: buttonWidth,
-  //   height: buttonHeight,
-  //   top: '-75px',
-  //   left: '-45px'
-  // }).addClass("rippleEffect");
-
-});
-
-
-
-
-
-
-
-</script>
-
-
-
-</body>
-
+  <div id="question-holderB">
+    <div id="q1-containB">
+      <div id="q1B"></div>
+    </div>
+    <div id="q0-hover-boxB" class="all-box-right"></div>
+    <div id="q0B" class="questionsB"></div>
+    <!-- <div id="left-light"></div> -->
+    <div id="right-light"></div>
+    <div id="q2-hover-boxB" class="four-right all-box-right"></div>
+    <div id="q2B" class="questionsB"></div>
+    <div id="q3-hover-boxB" class="four-right all-box-right"></div>
+    <div id="q3B" class="questionsB"></div>
+    <div id="q4-hover-boxB" class="four-right all-box-right"></div>
+    <div id="q4B" class="questionsB"></div>
+    <div id="q5-hover-boxB" class="four-right all-box-right"></div>
+    <div id="q5B" class="questionsB"></div>
+  </div>
+  </body>
 </html>
