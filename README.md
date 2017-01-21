@@ -1,4 +1,4 @@
-# Fan
+<p align="center"># Fan</p>
 
 Find a Friend.  Or Don't.  But you probably will.
 
