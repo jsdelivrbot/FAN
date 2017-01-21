@@ -21,6 +21,7 @@ module.exports = (app) => {
       connection.query('SELECT * FROM friends', (err, rows, fields) => {
         let match = 1000;
         let matchName = '';
+        let matchPhoto = '';
         let total = 0;
         let userScoreArr = req.body.scores.split(',');
         for (let i = 0; i < rows.length; i++){
@@ -33,9 +34,11 @@ module.exports = (app) => {
           if (total < match){
             match = total;
             matchName = rows[i].name;
+            matchPhoto = rows[i].photo;
           }
         }
         req.body.match = matchName;
+        req.body.matchPhoto = matchPhoto;
         connection.query('INSERT INTO friends SET ?', req.body, (err) => {
             if (err) throw err;
             res.send(req.body);
