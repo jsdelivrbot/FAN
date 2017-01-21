@@ -253,11 +253,11 @@ $(document).on('ready', function() {
         isPosted = true;
         newCharacter.name = $('#name-input').val().trim();
         newCharacter.photo = $('#photo-input').val().trim();
-        $('#name-input').fadeOut();
-        $('#photo-input').fadeOut();
+        $('#name-input').css({'width': '0', 'margin-left': '250px', 'opacity': '0'});
+        $('#photo-input').css({'width': '0', 'margin-right': '268px', 'opacity': '0'});
         $('#postData').fadeOut();
         $('<div id="instruct"></div>').appendTo('body');
-        $('#instruct').html('Toggle filters for compatibility analysis');
+        $('#instruct').html('Toggle filters for compatibility analysis<br>Double Click To Lock In Question');
         $('#instruct').fadeTo(1000, 1);
 
         allGlow()

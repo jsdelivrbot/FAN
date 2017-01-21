@@ -331,6 +331,7 @@ a:hover, a:active, a:focus, a:visited {
   background-color: transparent;
   border: 1px solid #888;
   font-size: 14px;
+  transition: all 1s ease;
 }
 #photo {
   position: absolute;
@@ -343,12 +344,14 @@ a:hover, a:active, a:focus, a:visited {
   transition: all 1s ease;
 }
 #photo-input {
+  margin-right: 15px;
   width: 200px;
   height: 20px;
   color: white;
   background-color: transparent;
   border: 1px solid #888;
   font-size: 14px;
+  transition: all 1s ease;
 }
 textarea:focus, input:focus{
   outline: none;
