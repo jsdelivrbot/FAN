@@ -4,7 +4,7 @@ body {
   font-family: 'Bungee Hairline', cursive;
   color: white;
 }
-.id, .name, .photo, .match, .match-photo, .score {
+.id, .name, .photo, .match, .match-photo, .scores {
   margin-bottom: 10px;
   font-size: 14px;
 }
