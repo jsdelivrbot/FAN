@@ -13,7 +13,7 @@ $(document).on('ready', function() {
     let chosenId;
     let chosenQuestion;
     let isQchosen = false;
-
+//pops out profile from left upon completion
     let popOutLeft = (id, direction) => {
         $('#'+id).css({
             'width': '250px',
@@ -25,7 +25,7 @@ $(document).on('ready', function() {
         $('#'+id).css('background-color', 'rgba(255,255,255, 0)');
         $('#'+id).children().css('margin-'+direction, '0px');
     }
-
+//pops out match from left upon completion
     let popOutRight = (id, direction) => {
         $('#'+id).css({
             'width': '250px',
@@ -37,7 +37,7 @@ $(document).on('ready', function() {
         $('#'+id).css('background-color', 'rgba(255,255,255, 0)');
         $('#'+id).children().css('margin-'+direction, '0px');
     }
-
+//pops back in
     let popIn = (id, direction, radiusTop, radiusBottom) => {
         $('#'+id).css({
             'width': '5px',
@@ -49,13 +49,13 @@ $(document).on('ready', function() {
         $('#'+id).css('background-color', 'rgba(255,255,255, 1)');
         $('#'+id).children().css('margin-'+direction, '-250px');
     }
-
+//fades in a glow over the bar filters
     let waitGlowFunc = (num, time, px, str) => {
       let waitGlow3 = setTimeout(function() {
         $('#q'+num).css('box-shadow', '0px 0px '+px+'px '+str+'px');
       }, time);
     }
-
+//fades in and out over all the bar filters in a wave pattern
     let allGlow = () => {
       //left side
       waitGlowFunc('0', 000, 200, 20);
@@ -95,7 +95,7 @@ $(document).on('ready', function() {
     let wait = setTimeout(function() {
         $("#wrapper").css('opacity', '1');
     }, 1000);
-
+//creates the post button once initial user info has been entered
     $(document).on('keypress', function(e) {
         if (e.which == 13) {
             e.preventDefault();
@@ -112,6 +112,7 @@ $(document).on('ready', function() {
     let isToggled = false;
     let id = 'q';
     let leftOrRight = 'left';
+//controls all toggle click functionality of the filter bars
     let type = (qId, curId, question) => {
         let lastChar = qId.substr(qId.length - 1);
         let chooseToggle = () => {
@@ -148,7 +149,7 @@ $(document).on('ready', function() {
             }
         }
     }
-
+//function to dictate all hover actions
     let hoverState = (id, question, height, width) => {
       $('#'+id).css({ 'width': width+'px', 'color': 'white' });
       if (!isQchosen) {
@@ -215,7 +216,7 @@ $(document).on('ready', function() {
 
         $('.questions, .questionsB').css({ 'width': '2px', 'opacity': '1' });
     });
-
+//parent function to the type function
     let clickBar = (id, question) => {
       $(document).on('click', id, function() {
           chosenBar = $(this);
@@ -247,7 +248,8 @@ $(document).on('ready', function() {
         $('#button-hover').css('opacity', 1);
         $('button').css('cursor', 'pointer');
     });
-
+//enables filter toggle functionality after the post button has begin clicked
+//user may begin survey
     $(document).on('click', 'div#postData', function() {
         $('.all-box-left, .all-box-right').css('cursor', 'pointer');
         isPosted = true;
@@ -262,7 +264,8 @@ $(document).on('ready', function() {
 
         allGlow()
     });
-
+//functionality for each button/answer chosen
+//post sent after 10 questions have been answered
     $('.all-buttons').on('click', function(e) {
         e.preventDefault();
         allGlow();

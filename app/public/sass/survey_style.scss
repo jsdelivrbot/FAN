@@ -23,8 +23,6 @@ a:hover, a:active, a:focus, a:visited {
   color: white;
 }
 
-
-
 #display-match {
   width: 100%;
   position: absolute;
@@ -35,8 +33,10 @@ a:hover, a:active, a:focus, a:visited {
   font-size: 24px;
   color: #666;
   margin-left: -15px;
+  cursor: default;
   &:hover {
-      text-decoration: none;
+    cursor: default;
+    text-decoration: none;
   }
 }
 
@@ -52,16 +52,7 @@ a:hover, a:active, a:focus, a:visited {
   border: none;
   outline:0;
   color: white;
-  // font-size: 24px;
 }
-
-// #see-matches{
-//   @extend #display-match;
-//   margin-bottom: 400px;
-//   font-size: 50px;
-//   opacity: 1;
-//   transition: all .5s ease;
-// }
 
 .all-buttons {
   width: 100px;
@@ -106,6 +97,12 @@ a:hover, a:active, a:focus, a:visited {
   font-size: 24px;
   color: white;
   font-family: 'Bungee Hairline', cursive;
+  &:hover {
+    // opacity: 0;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid #666;
+  }
 }
 
 #friend-finder{
@@ -517,10 +514,6 @@ video {
   margin-right: 633px;
   // width: 765px;
 }
-
-// .left-slide {
-//   margin-left: 200px;
-// }
 
 #sidebar-wrapper {
   z-index: 10;
