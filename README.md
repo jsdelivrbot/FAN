@@ -1,8 +1,8 @@
-<p align="center"># Fan</p>
+# Fan
 
-Find a Friend.  Or Don't.  But you probably will.
+<p align="center">Find a Friend.  Or Don't.  But you probably will.</p>
 
-Take your time.  Simple.
+<p align="center">Take your time</p>
 
 ![alt text](https://github.com/rasianart/FriendFinder/blob/master/app/public/images/FAN.png)
 
