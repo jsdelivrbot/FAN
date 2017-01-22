@@ -8,7 +8,7 @@
 
 Video Demo
 
-https://cdn.rawgit.com/rasianart/FAN/5d345210/app/public/videos/burger_demo.mp4
+https://cdn.rawgit.com/rasianart/FAN/3453f9ec/app/public/videos/demo_runthrough.mp4
 
 
 
