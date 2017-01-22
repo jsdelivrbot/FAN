@@ -6,7 +6,9 @@
 
 ![alt text](https://github.com/rasianart/FriendFinder/blob/master/app/public/images/FAN.png)
 
-![alt text](https://cdn.rawgit.com/rasianart/FAN/6676af9b/app/public/videos/burger_demo.mp4)
+Video Demo
+
+https://cdn.rawgit.com/rasianart/FAN/5d345210/app/public/videos/burger_demo.mp4
 
 
 
