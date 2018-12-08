@@ -8,7 +8,7 @@
 
 Video Demo
 
-https://cdn.rawgit.com/rasianart/FAN/3453f9ec/app/public/videos/demo_runthrough.mp4
+https://cdn.jsdelivr.net/gh/rasianart/FAN@3453f9ec/app/public/videos/demo_runthrough.mp4
 
 
 
